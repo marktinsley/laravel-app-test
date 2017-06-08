@@ -14,7 +14,7 @@ class AppHelperTest extends TestCase
     {
         $concreteDependency = new MyDependency(10);
 
-        $concrete = app(MyInterface::class, [$concreteDependency]);
+        $concrete = app(MyInterface::class, ['myDependency' => $concreteDependency]);
 
         $this->assertEquals(10, $concrete->dependency->myValue);
     }
